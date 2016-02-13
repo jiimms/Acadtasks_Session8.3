@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	<head>
+		<TITLE>
+			Session8 Assignments
+		</TITLE>
+		<style type="text/css">
+			br {
+				line-height: 0.1;
+			}
+			form {
+				width: 32%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			legend {
+				font-weight: bold;
+			}
+
+			label {
+				width: 120px;
+				display: inline-block;
+				font-weight: bold;
+							}
+							.width input {
+								width: 300px;
+							}
+							.projectwidth input {
+								width: 175px;
+							}
+		</style>	
+	</head>
+
+	<body>
+		<form>
+			<fieldset class= "width">
+				<legend>All fields are mandatory</legend>
+				<input type ="text" id="name" name="userName" placeholder ="Name" required><br>
+				<input type ="email" id="mail" autofocus placeholder ="Email" name="userEmail" required><br>
+				<input type = "password" id ="password" placeholder ="Password" required name="userpassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,15}$"><br>
+			</fieldset>
+
+			<fieldset class= "projectwidth">
+				<legend>Project Details</legend>
+				<label for ="projecturl">Project url: </label>
+				<input placeholder ="Project url" type ="url" id ="projecturl" name="projecturl" required><br>
+				<label for="projectdate">Completion date: </label> 
+				<input type ="date" id ="projectdate" name="projectdate" required><br>
+			</fieldset>
+
+			<fieldset class= "projectwidth">
+				<legend>Form Submission Date and Time</legend>
+				<label for="currentmonth">Current Month: </label>
+				<input type = "month" id ="currentmonth" name="month" required><br>
+				<label for="currentweek">Current Week: </label>
+				<input type = "week" id ="currentweek" name="week" required><br>
+				<label for="currenttime">Current Time: </label>
+				<input type = "time" id ="currenttime" name="time" required><br>
+			</fieldset>
+
+			<fieldset>
+				<legend>Personal Details</legend>
+				<label for = "color">Favorite Color:  </label>
+				<input type ="color" id="color" name ="color"><br>
+				<label for ="age">Age: </label><br>
+				<input type=radio name=age VALUE="?" CHECKED>unspecified<br>
+   			<INPUT TYPE=RADIO NAME=age VALUE="18-30">18-30 years<br>
+		    <INPUT TYPE=RADIO NAME=age VALUE="31-45">26-35 years<br>
+		    <INPUT TYPE=RADIO NAME=age VALUE="45-">45 or more years<br><br>
+		    <label for="age">Age: </label> <br>
+				<input type="range" min="18" max="65" value="25" id="age" step="1" oninput="outputUpdate(value)">
+				<output for="age" id="uage">25</output><br><br>
+				<script type="text/javascript">
+					function outputUpdate(vol) {
+					document.querySelector('#uage').value = vol;
+					}
+				</script>
+
+
+	    	<label>Hobbies:</label> <br><!--With datalist its not possible to select more than one option and hobbies can be more than one -->
+	    	<input type =checkbox >Designing
+	    	<input type =checkbox >Developing 
+	    	<input type =checkbox >UX <br>
+	    	<input type =checkbox >Data Management
+	    	<input type =checkbox >Testing <br>
+	    	<textarea  placeholder ="Any other" rows="2"></textarea><br><br>
+			</fieldset>
+				
+			<input type = "submit" value = "enter when done">
+		</form>
+
+	</body>
